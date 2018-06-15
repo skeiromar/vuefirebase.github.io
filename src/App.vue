@@ -110,8 +110,11 @@ export default {
       console.log(bookRef);
     },
     addBook(){
-      if (!(this.newBook.url.includes("https://"))){
-        this.newBook.url = "https://" + this.newBook.url;
+      if (!(this.newBook.url.includes("https://"))) 
+      {
+        if (!(this.newBook.url.includes("http://"))) {
+          this.newBook.url = "https://" + this.newBook.url;
+        }
       }
 
       bookRef.push(this.newBook);
